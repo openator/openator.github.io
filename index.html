@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Openator - Помогает искать туры на сайтах туроператоров</title>
+    <meta name="keywords" content="Openator, поиск туров на сайтах туроператоров">
+    <meta name="description" content="Openator заполняет поисковую форму на сайте туроператра чтобы Вам не приходилось вносить одни и те же данные несколько раз">
+    <meta property="og:image" content="https://____.com/images/promo.jpg"/>
+    <meta name="twitter:image:src" content="https://____.com/images/promo.jpg"/>
+    <meta itemprop="image" content="https://____.com/images/promo.jpg"/>
+
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wraper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 maincol">
+            <h1>Openator <sup><i>Beta</i></sup></h1>
+            
+            <form action="" id="mainform" >
+                <div class="form-group">
+                  <label for="city">Город вылета</label>
+                  <select name="city" id="city" class="form-control"  >
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="country">Страна</label>
+                  <select name="country" id="country" class="form-control" >
+                    <option value="Египет">Египет</option>
+                    <option value="Турция">Турция</option>
+                    <option value="ОАЭ">ОАЭ</option>
+                    <option value="Болгария">Болгария</option>
+                    <option value="Больше стран будет доступно в финальное версии">Больше стран будет доступно в финальное версии</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Дата заезда</label>
+                    <div class="row">
+                      <div class="col-xs-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="dateFrom">C</label>
+                          <input class="form-control calendar" id="dateFrom" type="text" name="dateFrom"  >
+                        </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="dateTo">По</label>
+                          <input class="form-control calendar" id="dateTo" type="text" name="dateTo"  >
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div>
+                  <label>Продолжительность</label>
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-6">
+                      <div class="form-group">
+                        <label for="durationMin">От</label>
+                        <input type="text" class="form-control" name="durationMin" id="durationMin"  >
+                      </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                      <div class="form-group">
+                        <label for="durationMax">До</label>
+                        <input type="text" class="form-control" name="durationMax" id="durationMax" >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="duration-range"></div>
+                </div>
+                <div>
+                  <div class="row">
+                    <div class="col-xs-7 col-sm-7">
+                      <div class="form-group">
+                        <label for="adults">Взрослые</label>
+                        <div class="">
+                          <div class="adults-radio">
+                            <input name="adults" id="adults1" value="1" type="radio">
+                            <label for="adults1">1</label>
+
+                            <input name="adults" id="adults2" value="2" checked="checked" type="radio">
+                            <label for="adults2">2</label>
+
+                            <input name="adults" id="adults3" value="3" type="radio">
+                            <label for="adults3">3</label>
+
+                            <input name="adults" id="adults4" value="4" type="radio">
+                            <label for="adults4">4</label>
+                          </div>
+                        </div>
+
+
+
+                        <!--<select class="form-control" name="adults__" id="adults"  >                        
+                        </select>-->
+                      </div>
+                    </div>
+                    <div class="col-xs-5 col-sm-5">
+                      <div class="form-group">
+                        <label for="children">Дети</label>
+                        <div class="adults-radio adults-radio-children">
+
+                          <input name="children" id="children0" value="0" type="radio" checked>
+                          <label for="children0">0</label>
+
+                          <input name="children" id="children1" value="1" type="radio">
+                          <label for="children1">1</label>
+
+                          <input name="children" id="children2" value="2" type="radio">
+                          <label for="children2">2</label>
+
+                        </div>
+
+
+                        <!--<select class="form-control" name="children" id="children" >                      
+                        </select>-->
+                      </div>
+                      <div class="form-group" id="age-block">
+                        <label for="children">Возраст</label>
+                        <div>
+                          <select name="age1" id="age1" class="form-control">
+                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option>
+                          </select>
+                        </div>
+                        <div>
+                          <select name="age2" id="age2" class="form-control">
+                            <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><strong>Найти на сайте туроператора:</strong> <br>(откроется в новом окне)</p>
+            </form>  
+
+            
+            <div id="go">
+
+            </div>        
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 rightcol">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="setUserCountry text-right">
+                  <p><span>Страна:</span>
+                    <a href="#setRU" id="setRU">RU</a>
+                    <a href="#setUA" id="setUA">UA</a>
+                    <a href="#setAZ" id="setAZ">AZ</a>
+                    <a href="#setBY" id="setBY">BY</a>
+                    <a href="#setKZ" id="setKZ">KZ</a>
+                </p>
+                </div>
+              </div>
+              <div class="col-sm-10 col-sm-offset-2">
+                <blockquote class="mes">
+                  <p>Openator заполняет поисковую форму на сайте туроператра чтобы Вам не приходилось вносить одни и те же данные несколько раз</p>
+                </blockquote>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="transition">
+        <div class="sk-folding-cube" id="loadingCube">
+          <div class="sk-cube1 sk-cube"></div>
+          <div class="sk-cube2 sk-cube"></div>
+          <div class="sk-cube4 sk-cube"></div>
+          <div class="sk-cube3 sk-cube"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="scripts.min.js"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+  </body> 
+</html>
